@@ -32,10 +32,10 @@
 
             display-name = "Base";
             bindings = <
-  &mt LGUI Q  &mt LGUI W  &kp E       &mt LGUI R  &kp T      &kp Y           &kp U       &kp I       &mt LGUI O  &mt LGUI P
-  &kp A       &mt LGUI S  &kp D       &mt LGUI F  &kp G      &mt LGUI H      &mt LGUI J  &mt LGUI K  &mt LGUI L  &mt LALT BSPC
-  &mt LGUI Z  &kp X       &mt LGUI C  &mt LGUI V  &kp B      &mt LGUI N      &mt LGUI M  &kp COMMA   &kp PERIOD  &kp SEMI
-                          &kp LALT    &mo 1       &kp RET    &mt LGUI SPACE  &mo 2       &kp RCTRL
+  &mt LGUI Q  &mt LGUI W  &kp E       &mt LGUI R  &mt LGUI T    &kp Y           &kp U       &kp I       &mt LGUI O  &mt LGUI P
+  &kp A       &mt LGUI S  &kp D       &mt LGUI F  &kp G         &mt LGUI H      &mt LGUI J  &mt LGUI K  &mt LGUI L  &mt LALT BSPC
+  &mt LGUI Z  &kp X       &mt LGUI C  &mt LGUI V  &kp B         &mt LGUI N      &mt LGUI M  &kp COMMA   &kp PERIOD  &kp SEMI
+                          &kp LALT    &mo 1       &kp RET       &mt LGUI SPACE  &mo 2       &kp RCTRL
             >;
         };
 
@@ -64,10 +64,10 @@
 
             display-name = "Raise";
             bindings = <
-  &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N5       &trans    &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans    &trans 
-  &trans     &kp NUMBER_4  &kp N5        &kp N6        &trans       &trans    &kp C_VOL_DN          &kp C_VOLUME_UP       &trans    &trans 
-  &trans     &kp N7        &kp N8        &kp N9        &trans       &trans    &kp RGUI              &kp LCTRL             &kp RALT  &trans
-                           &kp LGUI      &kp ESC       &kp SPACE    &kp RET   &trans                &kp TAB
+  &kp N0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N5       &trans   &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans    &trans
+  &trans  &kp NUMBER_4  &kp N5        &kp N6        &trans       &trans   &kp C_VOL_DN          &kp C_VOLUME_UP       &trans    &trans
+  &trans  &kp N7        &kp N8        &kp N9        &trans       &trans   &kp RGUI              &kp LCTRL             &kp RALT  &trans
+                        &kp LGUI      &kp ESC       &kp SPACE    &kp RET  &trans                &kp TAB
             >;
         };
     };
