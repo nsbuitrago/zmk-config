@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-&mt { tapping-term-ms = <400>; };
+&mt { tapping-term-ms = <600>; };
 
 / {
     chosen { zmk,matrix_transform = &five_column_transform; };
