@@ -20,11 +20,6 @@
         };
     };
 
-    holdtap {
-        compatible = "zmk,behavior-hold-tap";
-        tapping-term-ms = <400>;
-    }
-
     keymap {
         compatible = "zmk,keymap";
 
