@@ -34,10 +34,10 @@
 
             display-name = "Base";
             bindings = <
-  &kp Q  &kp W  &kp E     &kp R  &kp T           &kp Y      &kp U        &kp I      &kp O       &kp P
-  &kp A  &kp S  &kp D     &kp F  &kp G           &kp H      &kp J        &kp K      &kp L       &kp BACKSPACE
-  &kp Z  &kp X  &kp C     &kp V  &kp B           &kp N      &kp M        &kp COMMA  &kp PERIOD  &kp SLASH
-                &kp LALT  &mo 1  &mt LGUI RET    &kp SPACE  &lt 2 UNDER  &kp RCTRL
+  &kp Q  &kp W  &kp E     &kp R         &kp T           &kp Y      &kp U        &kp I      &kp O       &kp P
+  &kp A  &kp S  &kp D     &kp F         &kp G           &kp H      &kp J        &kp K      &kp L       &kp BACKSPACE
+  &kp Z  &kp X  &kp C     &kp V         &kp B           &kp N      &kp M        &kp COMMA  &kp PERIOD  &kp SLASH
+                &kp LALT  &lt 1 ESCAPE  &mt LGUI RET    &kp SPACE  &lt 2 UNDER  &kp RCTRL
             >;
         };
 
@@ -50,10 +50,10 @@
 
             display-name = "Lower";
             bindings = <
-  &kp EXCL                  &kp AT        &kp HASH      &kp DLLR          &kp PRCNT                   &kp CARET         &kp AMPS              &kp STAR               &kp MINUS         &kp EQUAL
-  &kp LS(LA(LC(LEFT_GUI)))  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_COMMAND  &kp LEFT_SHIFT              &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-  &bt BT_CLR                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &kp LS(LA(LC(LEFT_GUI)))    &kp GRAVE         &kp COLON             &kp SEMI               &kp BACKSLASH     &kp PIPE
-                                          &trans        &trans            &trans                      &kp ESCAPE        &kp LS(TAB)           &kp TAB
+  &kp EXCL        &kp AT        &kp HASH      &kp DLLR          &kp PRCNT                         &kp CARET         &kp AMPS              &kp STAR               &kp MINUS         &kp EQUAL
+  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_COMMAND  &kp LS(LA(LC(LG(LEFT_SHIFT))))    &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+  &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3                      &kp GRAVE         &kp COLON             &kp SEMI               &kp BACKSLASH     &kp PIPE
+                                &trans        &trans            &trans                            &kp ESCAPE        &kp LS(TAB)           &kp TAB
             >;
         };
 
@@ -66,10 +66,10 @@
 
             display-name = "Raise";
             bindings = <
-  &kp N0      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans        &kp LEFT              &kp DOWN              &kp UP_ARROW       &kp RIGHT        &trans
-  &kp PERIOD  &kp NUMBER_4  &kp N5        &kp N6        &trans        &kp LEFT_SHIFT        &kp RIGHT_COMMAND     &kp RIGHT_CONTROL  &kp RIGHT_ALT    &trans
-  &kp COMMA   &kp N7        &kp N8        &kp N9        &trans        &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans
-                            &kp LGUI      &kp SPACE     &kp RETURN    &trans                &trans                &trans
+  &kp N0      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans        &kp LEFT                        &kp DOWN              &kp UP_ARROW       &kp RIGHT        &trans
+  &kp PERIOD  &kp NUMBER_4  &kp N5        &kp N6        &trans        &kp RA(RS(RC(RG(LEFT_SHIFT))))  &kp RIGHT_COMMAND     &kp RIGHT_CONTROL  &kp RIGHT_ALT    &kp RIGHT_SHIFT
+  &kp COMMA   &kp N7        &kp N8        &kp N9        &trans        &kp C_BRIGHTNESS_DEC            &kp C_BRIGHTNESS_INC  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans
+                            &kp LGUI      &kp SPACE     &kp RETURN    &trans                          &trans                &trans
             >;
         };
     };
