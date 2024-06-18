@@ -16,8 +16,8 @@
     combos {
         compatible = "zmk,combos";
 
-        shift {
-            bindings = <&kp LEFT_SHIFT>;
+        shift-escape {
+            bindings = <&mt LEFT_SHIFT ESCAPE>;
             key-positions = <34 31>;
         };
     };
@@ -50,10 +50,10 @@
 
             display-name = "Lower";
             bindings = <
-  &kp EXCL      &kp AT        &kp HASH      &kp DLLR          &kp PRCNT         &kp CARET         &kp AMPS              &kp STAR               &kp MINUS         &kp EQUAL
-  &bt BT_SEL 0  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_COMMAND  &kp LEFT_SHIFT    &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-  &bt BT_CLR    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3      &bt BT_SEL 4      &kp GRAVE         &kp COLON             &kp SEMI               &kp BACKSLASH     &kp PIPE
-                              &trans        &trans            &trans            &kp ESCAPE        &kp LS(TAB)           &kp TAB
+  &kp EXCL                  &kp AT        &kp HASH      &kp DLLR          &kp PRCNT                   &kp CARET         &kp AMPS              &kp STAR               &kp MINUS         &kp EQUAL
+  &kp LS(LA(LC(LEFT_GUI)))  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_COMMAND  &kp LEFT_SHIFT              &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+  &bt BT_CLR                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &kp LS(LA(LC(LEFT_GUI)))    &kp GRAVE         &kp COLON             &kp SEMI               &kp BACKSLASH     &kp PIPE
+                                          &trans        &trans            &trans                      &kp ESCAPE        &kp LS(TAB)           &kp TAB
             >;
         };
 
