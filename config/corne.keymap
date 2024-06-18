@@ -17,7 +17,7 @@
         compatible = "zmk,combos";
 
         shift-escape {
-            bindings = <&mt LEFT_SHIFT ESCAPE>;
+            bindings = <&kp LEFT_SHIFT>;
             key-positions = <34 31>;
         };
     };
@@ -53,7 +53,7 @@
   &kp EXCL        &kp AT        &kp HASH      &kp DLLR          &kp PRCNT                         &kp CARET         &kp AMPS              &kp STAR               &kp MINUS         &kp EQUAL
   &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_COMMAND  &kp LS(LA(LC(LG(LEFT_SHIFT))))    &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
   &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3                      &kp GRAVE         &kp COLON             &kp SEMI               &kp BACKSLASH     &kp PIPE
-                                &trans        &trans            &trans                            &kp ESCAPE        &kp LS(TAB)           &kp TAB
+                                &trans        &trans            &trans                            &kp CAPSLOCK      &kp LS(TAB)           &kp TAB
             >;
         };
 
@@ -66,10 +66,10 @@
 
             display-name = "Raise";
             bindings = <
-  &kp N0      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans        &kp LEFT                        &kp DOWN              &kp UP_ARROW       &kp RIGHT        &trans
-  &kp PERIOD  &kp NUMBER_4  &kp N5        &kp N6        &trans        &kp RA(RS(RC(RG(LEFT_SHIFT))))  &kp RIGHT_COMMAND     &kp RIGHT_CONTROL  &kp RIGHT_ALT    &kp RIGHT_SHIFT
-  &kp COMMA   &kp N7        &kp N8        &kp N9        &trans        &kp C_BRIGHTNESS_DEC            &kp C_BRIGHTNESS_INC  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans
-                            &kp LGUI      &kp SPACE     &kp RETURN    &trans                          &trans                &trans
+  &kp N0      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL             &kp LEFT                        &kp DOWN              &kp UP_ARROW       &kp RIGHT        &trans
+  &kp PERIOD  &kp NUMBER_4  &kp N5        &kp N6        &mt MINUS PLUS        &kp RA(RS(RC(RG(LEFT_SHIFT))))  &kp RIGHT_COMMAND     &kp RIGHT_CONTROL  &kp RIGHT_ALT    &kp RIGHT_SHIFT
+  &kp COMMA   &kp N7        &kp N8        &kp N9        &mt SLASH ASTERISK    &kp C_BRIGHTNESS_DEC            &kp C_BRIGHTNESS_INC  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans
+                            &kp LGUI      &kp SPACE     &kp RETURN            &trans                          &trans                &trans
             >;
         };
     };
