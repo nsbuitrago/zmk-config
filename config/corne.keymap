@@ -16,60 +16,108 @@
     combos {
         compatible = "zmk,combos";
 
-        shift {
-            bindings = <&kp LEFT_SHIFT>;
+        caps {
+            bindings = <&kp CAPS>;
             key-positions = <34 31>;
+        };
+
+        func {
+            bindings = <&mo 5>;
+            key-positions = <30 35>;
+        };
+    };
+
+    macros {
+        double_colon: double_colon {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COLON &kp COLON>;
+            label = "DOUBLE_COLON";
+        };
+
+        up_dir: up_dir {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp DOT &kp FSLH>;
+            label = "UP_DIR";
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        alpha {
             // -----------------------------------------------------------------------------------------
             // |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U   |  I   |  O   | P |
             // |  A  |  S  |  D  |  F  |  G  |     |  H  |  J   |  K   |  L   | [+OPT] BSPC | 
             // |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M   | , | . | ; |
             //             | OPT | LWR | RET |     | [+CMD] SPACE | RSE  | CTRL |
 
-            display-name = "Base";
+            display-name = "alpha";
             bindings = <
-  &kp Q        &kp W       &kp E        &kp R           &kp T                     &kp Y                   &kp U       &kp I        &kp O       &kp P
-  &mt LSHFT A  &mt LALT S  &mt LCTRL D  &mt LEFT_GUI F  &mt LS(LA(LC(LGUI))) G    &mt LS(LA(LC(LGUI))) H  &mt RGUI J  &mt RCTRL K  &mt RALT L  &mt RIGHT_SHIFT BACKSPACE
-  &kp Z        &kp X       &kp C        &kp V           &kp B                     &kp N                   &kp M       &kp COMMA    &kp PERIOD  &kp SLASH
-                           &kp MINUS    &lt 1 ESCAPE    &kp RETURN                &kp SPACE               &lt 2 TAB   &kp UNDER
+  &kp Q        &kp W       &kp E        &kp R           &kp T                     &kp Y                   &kp U       &kp I             &kp O       &kp P
+  &mt LSHFT A  &mt LALT S  &mt LCTRL D  &mt LEFT_GUI F  &mt LS(LA(LC(LGUI))) G    &mt LS(LA(LC(LGUI))) H  &mt RGUI J  &mt RCTRL K       &mt RALT L  &mt RIGHT_SHIFT BACKSPACE
+  &kp Z        &kp X       &kp C        &kp V           &kp B                     &kp N                   &kp M       &kp COMMA         &kp PERIOD  &kp SLASH
+                           &lt 4 MINUS  &lt 1 ESCAPE    &kp RETURN                &kp SPACE               &lt 2 TAB   &lt 3 UNDERSCORE
             >;
         };
 
-        lower_layer {
+        symbols {
             // -----------------------------------------------------------------------------------------
             // | !     |  @  |  #   |  $    |  %  |     |  ^  |  &  |  *  |  -_  |  =+  |
             // | BT0   | BT1 | BT2  | BT3   | BT4 |     | '"  |  (  |  )  |  [   |  ]   |
             // | BTCLR | OPT | CMD  | SHIFT |     |     | `~  | /?  |  \| |     |     |
             //               | CTRL |       | SPC |      | RET | ESC | TAB |
 
-            display-name = "Lower";
+            display-name = "symbols";
             bindings = <
-  &kp EXCL        &kp AT        &kp HASH      &kp DLLR          &kp PRCNT                         &kp CARET         &kp AMPS              &kp STAR               &kp MINUS         &kp EQUAL
-  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_COMMAND  &kp LS(LA(LC(LG(LEFT_SHIFT))))    &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-  &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3                      &kp GRAVE         &kp COLON             &kp SEMI               &kp BACKSLASH     &kp PIPE
-                                &trans        &trans            &trans                            &kp CAPSLOCK      &kp LS(TAB)           &kp TAB
+  &kp SINGLE_QUOTE  &kp LESS_THAN  &kp GREATER_THAN  &kp DOUBLE_QUOTES  &kp PRCNT    &kp AMPERSAND  &double_colon  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PERCENT
+  &kp EXCLAMATION   &kp MINUS      &kp PLUS          &kp EQUAL          &kp HASH     &kp PIPE       &kp COLON      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMI
+  &kp CARET         &kp SLASH      &kp ASTERISK      &kp BACKSLASH      &up_dir      &kp TILDE      &kp DOLLAR     &kp LEFT_BRACE        &kp LEFT_BRACE         &kp AT_SIGN
+                                   &trans            &trans             &trans       &trans         &trans         &trans
             >;
         };
 
-        raise_layer {
+        numbers {
             // -----------------------------------------------------------------------------------------
             // | 0) |  1! |  2@ |  3# |  5% |     |     |  BRI_DN |  BRI_UP |      |      |
             // |    |  4$ |  5% |  6^ |     |     |     |  VOL_DN |  VOL_UP |      |      |
             // |    |  7& |  8* |  9( |     |     |     |  CMD    | CTRL    | META |      |
             //            | GUI | ESC | SPC |     | RET |     | TAB |
 
-            display-name = "Raise";
+            display-name = "numbers";
             bindings = <
-  &kp N0      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL             &kp LEFT                        &kp DOWN              &kp UP_ARROW       &kp RIGHT        &trans
-  &kp PERIOD  &kp NUMBER_4  &kp N5        &kp N6        &mt MINUS PLUS        &kp RA(RS(RC(RG(LEFT_SHIFT))))  &kp RIGHT_COMMAND     &kp RIGHT_CONTROL  &kp RIGHT_ALT    &kp RIGHT_SHIFT
-  &kp COMMA   &kp N7        &kp N8        &kp N9        &mt SLASH ASTERISK    &kp C_BRIGHTNESS_DEC            &kp C_BRIGHTNESS_INC  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans
-                            &kp LGUI      &kp SPACE     &kp RETURN            &trans                          &trans                &trans
+  &kp N0      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL     &kp LC(LS(LGUI))  &kp RGUI   &kp RIGHT_ALT  &kp RCTRL  &kp RIGHT_SHIFT
+  &kp PERIOD  &kp NUMBER_4  &kp N5        &kp N6        &kp COMMA     &kp LEFT          &kp DOWN   &kp UP_ARROW   &kp RIGHT  &kp BACKSPACE
+  &trans      &kp N7        &kp N8        &kp N9        &trans        &kp PLUS          &kp MINUS  &kp ASTERISK   &kp SLASH  &trans
+                            &kp LGUI      &kp SPACE     &kp RETURN    &trans            &trans     &trans
+            >;
+        };
+
+        nav {
+            bindings = <
+  &kp LA(N0)  &kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &trans    &trans  &trans  &trans  &trans  &trans
+  &trans      &kp LA(NUMBER_4)  &kp LA(N5)        &kp LA(NUMBER_6)  &trans    &trans  &trans  &trans  &trans  &kp LEFT_SHIFT
+  &trans      &kp LA(N7)        &kp LA(N8)        &kp LA(N9)        &trans    &trans  &trans  &trans  &trans  &trans
+                                &trans            &trans            &trans    &trans  &trans  &trans
+            >;
+        };
+
+        system {
+            bindings = <
+  &bt BT_CLR  &bt BT_CLR_ALL  &trans        &trans        &trans    &kp C_BRI_MIN  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_MAXIMUM  &trans
+  &trans      &bt BT_SEL 3    &bt BT_SEL 1  &bt BT_SEL 0  &trans    &kp C_MUTE     &kp C_VOL_DN          &kp C_VOL_UP          &trans                    &trans
+  &trans      &trans          &trans        &trans        &trans    &trans         &trans                &trans                &trans                    &trans
+                              &trans        &trans        &trans    &trans         &trans                &trans
+            >;
+        };
+
+        func {
+            bindings = <
+  &trans  &kp F1  &kp F2  &kp F3  &trans    &trans  &kp F10  &kp F11  &kp F12  &trans
+  &trans  &kp F4  &kp F5  &kp F6  &trans    &trans  &trans   &trans   &trans   &trans
+  &trans  &kp F7  &kp F8  &kp F9  &trans    &trans  &trans   &trans   &trans   &trans
+                  &trans  &trans  &trans    &trans  &trans   &trans
             >;
         };
     };
