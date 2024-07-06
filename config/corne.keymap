@@ -8,8 +8,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-&mt { tapping-term-ms = <200>; };
-
 / {
     chosen { zmk,matrix_transform = &five_column_transform; };
 
@@ -36,6 +34,32 @@
         };
     };
 
+    behaviors {
+        lh_pht: lh_pht {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LH_PHT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            flavor = "tap-unless-interrupted";
+            retro-tap;
+            hold-trigger-key-positions = <5 15 25 26 16 6 7 17 27 28 18 8 9 19 29>;
+        };
+
+        rh_plt: rh_plt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RH_PLT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            flavor = "tap-unless-interrupted";
+            retro-tap;
+            hold-trigger-key-positions = <0 1 2 3 4 12 10 11 12 13 14 20 21 22 23 24>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -48,10 +72,10 @@
 
             display-name = "alpha";
             bindings = <
-  &kp Q  &kp W               &kp E           &kp R           &kp T                     &kp Y                   &kp U       &kp I             &kp O                &kp P
-  &kp A  &mt LEFT_CONTROL S  &mt LEFT_ALT D  &mt LEFT_GUI F  &mt LS(LA(LC(LGUI))) G    &mt LS(LA(LC(LGUI))) H  &mt RGUI J  &mt RIGHT_ALT K   &mt RIGHT_CONTROL L  &kp BACKSPACE
-  &kp Z  &kp X               &kp C           &kp V           &kp B                     &kp N                   &kp M       &kp COMMA         &kp PERIOD           &kp SLASH
-                             &lt 4 MINUS     &lt 1 ESCAPE    &mt LSHIFT RETURN         &mt RIGHT_SHIFT SPACE   &lt 2 TAB   &lt 3 UNDERSCORE
+  &kp Q  &kp W                   &kp E               &kp R           &kp T                         &kp Y                       &kp U           &kp I                &kp O                    &kp P
+  &kp A  &lh_pht LEFT_CONTROL S  &lh_pht LEFT_ALT D  &lh_pht LGUI F  &lh_pht LS(LA(LC(LGUI))) G    &rh_plt LS(LA(LC(LGUI))) H  &rh_plt RGUI J  &rh_plt RIGHT_ALT K  &rh_plt RIGHT_CONTROL L  &kp BACKSPACE
+  &kp Z  &kp X                   &kp C               &kp V           &kp B                         &kp N                       &kp M           &kp COMMA            &kp PERIOD               &kp SLASH
+                                 &lt 4 MINUS         &lt 1 ESCAPE    &mt LSHIFT RETURN             &mt RIGHT_SHIFT SPACE       &lt 2 TAB       &lt 3 UNDERSCORE
             >;
         };
 
